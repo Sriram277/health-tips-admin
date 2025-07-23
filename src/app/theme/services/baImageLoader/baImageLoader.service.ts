@@ -11,6 +11,9 @@ export class BaImageLoaderService {
       img.onload = function() {
         resolve('Image with src ' + src + ' loaded successfully.');
       };
+      img.onerror = function(error) {
+        reject('Error loading image with src ' + src);
+      };
     });
   }
 }
